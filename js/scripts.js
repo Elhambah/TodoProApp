@@ -22,16 +22,47 @@ createAddElment(JSON.parse(localStorage.getItem("todo")));;
 ulElement.addEventListener("dragover",(e)=>{
 e.preventDefault();
 if( e.target.classList.contains("card") &&
-  !e.target.classList.contains("dragging")){
+   !e.target.classList.contains("dragging"))
+   {
 const dragg=document.querySelector(".dragging");
-const cardlist=[...ul.querySelectorAll(".card")];
+const cardlist=[...ulElement.querySelectorAll(".card")];
+const currentIndex=cardlist.indexOf(dragg);
+const newIndex=cardlist.indexOf(e.target);
+if( currentIndex > newIndex ){
+    ulElement.insertBefore(dragg,e.target); 
+}
+else{
+ulElement.insertBefore(dragg,e.target.nextsibiling);
 
-
-
+}
 
 }
 
 })
+
+// ul.addEventListener('dragover', (e) => {
+//     e.preventDefault();
+//     if (e.target.classList.contains("card") &&
+//      !e.target.classList.contains("dragging")) {
+//       const draggingCard = document.querySelector(".dragging");
+//       const cards = [...ul.querySelectorAll(".card")];
+//       const currentPos = cards.indexOf(draggingCard);
+//       const newPos = cards.indexOf(e.target);
+//       console.log(currentPos, newPos);
+//       if (currentPos > newPos) {
+//         ul.insertBefore(draggingCard, e.target);
+//       } else {
+//         ul.insertBefore(draggingCard, e.target.nextSibling)
+//       }
+//       const todos = JSON.parse(localStorage.getItem("todos"));
+//       const removed = todos.splice(currentPos, 1);
+//       todos.splice(newPos, 0, removed[0]);
+//       localStorage.setItem("todos", JSON.stringify(todos));
+
+//     }
+//   });
+
+
 
 
 
