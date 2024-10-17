@@ -42,12 +42,12 @@ body.light {
   padding: 0;
   box-sizing: border-box;
   direction: rtl;
-  font-family: 'Markazi Text', serif;
+  font-family: 'BNAZANIN Text', serif;
 
 }
 
 html {
-  font-size: 62.5%;
+  font-size: 0.8em;
   position: relative;
 }
 
