@@ -42,12 +42,12 @@ body.light {
   padding: 0;
   box-sizing: border-box;
   direction: rtl;
-  font-family: 'BNAZANIN Text', serif;
+  font-family: 'Markazi Text', serif;
 
 }
 
 html {
-  font-size: 0.8em;
+  font-size: 62.5%;
   position: relative;
 }
 
@@ -72,7 +72,6 @@ body {
   padding-top: 8rem;
   width: min(85%, 54rem);
   margin: auto;
-  
 }
 
 /* INPUT AND BUTTON */
@@ -82,8 +81,6 @@ button {
   font: inherit;
   border: 0;
   background: transparent;
-  color:blanchedalmond
-  
 }
 
 button {
@@ -379,4 +376,8 @@ footer {
   header.card h1 {
     font-size: calc(var(--base-font) * 1.5);
   }
+}
+
+.todos .card dragging{
+  opacity: 0.5;
 }

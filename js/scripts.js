@@ -2,6 +2,7 @@ const themeSwitcher = document.getElementById("theme-switcher");
 const addBtn = document.getElementById("add-btn");
 const inputAddt = document.getElementById("addt");
 const bodyThem =document.querySelector("body");
+const ulElement=document.querySelector("ul");
 
 
 function main(){
@@ -17,6 +18,23 @@ themeSwitcher.addEventListener("click", ()=>{
 });
 
 createAddElment(JSON.parse(localStorage.getItem("todo")));;
+
+ulElement.addEventListener("dragover",(e)=>{
+e.preventDefault();
+if( e.target.classList.contains("card") &&
+  !e.target.classList.contains("dragging")){
+const dragg=document.querySelector(".dragging");
+const cardlist=[...ul.querySelectorAll(".card")];
+
+
+
+
+}
+
+})
+
+
+
 
 addBtn.addEventListener("click",()=>{
 const item=inputAddt.value.trim();
@@ -68,8 +86,17 @@ function createAddElment(arrayTodos){
     card.appendChild(cbContainer);
     card.appendChild(item);
     card.appendChild(clearBtn);
-    
-document.querySelector(".todos").appendChild(card);
+    document.querySelector(".todos").appendChild(card);
+
+   card.addEventListener("dragstart",()=>{
+     card.classList.add("dragging")
+   });
+
+   card.addEventListener("dragend",()=>{
+    card.classList.remove("dragging")
+  });
+
+
     
   });
 
