@@ -72,6 +72,7 @@ body {
   padding-top: 8rem;
   width: min(85%, 54rem);
   margin: auto;
+  
 }
 
 /* INPUT AND BUTTON */
@@ -81,6 +82,8 @@ button {
   font: inherit;
   border: 0;
   background: transparent;
+  color:blanchedalmond
+  
 }
 
 button {
